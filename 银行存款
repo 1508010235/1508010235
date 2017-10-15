@@ -47,7 +47,7 @@ public class DepositAccount {
                         System.out.println("账户名称："+saver.username);
                         System.out.println("账户金额："+saver.money1);
                         System.out.println("存款金额："+saver.money2);
-                        System.out.println("利       率："+saver.ar);
+                        System.out.println("利       率："+Account.ar);
                         System.out.println("月       息："+saver.Mintere());
                         System.out.println("年       息："+saver.Yintere());
 		}
