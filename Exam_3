@@ -1,0 +1,58 @@
+/**
+ * @title:Student.java
+ * @ClassName:Student
+ * @Description:建立student类并由其派生undergraduate类和graduate类
+ * @date 2017年10月14日 下午03:15:29
+ * @author:软工1502班-1508010235-倪旭
+ */
+
+public class Student {
+	static class student{
+		String name;;
+		int age;
+		String education;
+		public student(String name,int age,String education) {
+			this.name=name;
+			this.age=age;
+			this.education=education;
+		}
+		public void show() {
+			System.out.println ("姓名:"+this.name);
+			System.out.println ("年龄:"+this.age);
+			System.out.println ("学历:"+this.education);
+		}
+	}
+	static class undergraduate extends student{
+		String specialty;
+		public undergraduate(String name, int age, String education,String specialty) {
+			super(name, age, education);
+			this.specialty=specialty;
+		}
+		public void show() {
+			super.show();
+			System.out.println ("专业:"+this.specialty);
+		}
+	}
+	static class graduate extends student{
+		String direction;
+		public graduate(String name, int age, String education,String direction) {
+			super(name, age, education);
+			this.direction=direction;
+		}
+		public void show() {
+			super.show();
+			System.out.println("研究方向:"+this.direction);
+		}
+	}
+	public static void main(String[] args) {
+		student one=new student("丁一",19,"本科");
+		one.show();
+		System.out.println("\n");
+		undergraduate two=new undergraduate("倪二",19,"本科","计算机专业");
+		two.show();
+		System.out.println("\n");
+		graduate three=new graduate("张三",22,"研究生","人工智能");
+		three.show();
+	}
+
+}
