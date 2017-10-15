@@ -1,0 +1,54 @@
+/**
+* @Title: DepositAccount.java
+* @ClassName: DepositAccount
+* @Description:模拟银行定期存款系统，计算年息和月息
+* @date 2017年10月14日 上午11:03:18
+* @author:软工1502班-1508010235-倪旭
+*/
+
+public class DepositAccount {
+	 static class Account{
+	    String account;
+	    String username;
+	    double money1;
+	    double money2;
+		static double ar;
+		Account(String account,String username,double money1,double money2,double ar){
+			this.account=account;  //账号
+			this.username=username;   //户名
+			this.money1=money1;   //底金
+			this.money2=money2;   //存金
+			Account.ar =ar;   //利率
+		};
+		//开户
+		public void Open(){
+			
+		};
+		//存款
+		public void Save(){
+			
+		};
+		//查询
+		public void Quary(){
+			
+		};
+		//计算年息
+		public double Yintere(){
+			return (this.money1+this.money2)*Account.ar;
+		};
+		//计算月息
+		public double Mintere(){
+			return Yintere()/12;
+		};
+	 }
+		public static void main(String[] args) {
+		        Account saver=new Account("1234567890","ZhangSan",2000,5000,0.023);
+                        System.out.println("账       号："+saver.account);
+                        System.out.println("账户名称："+saver.username);
+                        System.out.println("账户金额："+saver.money1);
+                        System.out.println("存款金额："+saver.money2);
+                        System.out.println("利       率："+saver.ar);
+                        System.out.println("月       息："+saver.Mintere());
+                        System.out.println("年       息："+saver.Yintere());
+		}
+}
