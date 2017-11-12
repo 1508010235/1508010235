@@ -1,0 +1,47 @@
+interface computeWeight{
+	public double computeWeight();
+}
+class Televison implements computeWeight{
+	int sum;
+	double weight;
+	public Televison(int sum,double weight) {
+		this.sum=sum;
+		this.weight=weight;
+	}
+	public double computeWeight() {
+		return sum*weight;
+	}
+}
+class Computer implements computeWeight{
+	int sum;
+	double weight;
+	public Computer(int sum,double weight) {
+		this.sum=sum;
+		this.weight=weight;
+	}
+	public double computeWeight() {
+		return sum*weight;
+	}
+}
+class WashMachine implements computeWeight{
+	int sum;
+	double weight;
+	public WashMachine(int sum,double weight) {
+		this.sum=sum;
+		this.weight=weight;
+	}
+	public double computeWeight() {
+		return sum*weight;
+	}
+}
+public class Car {
+	static double totalweight;
+	public static void main(String args[]) {
+		computeWeight[] computeweight=new computeWeight[3];	
+		computeweight[0]=new Televison(5,40);
+		computeweight[1]=new Computer(10,20);
+		computeweight[2]=new WashMachine(5,60);
+		totalweight=computeweight[0].computeWeight()+computeweight[1].computeWeight()+computeweight[2].computeWeight();
+		System.out.println("卡车所能装载的货物总重量为:"+totalweight);
+	}
+}
