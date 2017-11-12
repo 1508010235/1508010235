@@ -1,0 +1,69 @@
+interface StudentManage{
+	public void setFee(int fee);
+	public int getFee();
+}
+interface TeacherManage{
+	public void setPay(int pay);
+	public int getPay();
+}
+class Graduate implements StudentManage,TeacherManage{
+	String name;
+	String sex;
+	int age;
+	int fee,pay;
+	public void setName(String name) {
+		this.name=name;
+		System.out.println("姓名:"+name);
+	}
+	public String getName() {
+		return name;
+	}
+	public void setSex(String sex) {
+		this.sex=sex;
+		System.out.println("性别:"+sex);
+	}
+	public String getSex() {
+		return sex;
+	}
+	public void setAge(int age) {
+		this.age=age;
+		System.out.println("年龄:"+age);
+	}
+	public int getAge() {
+		return age;
+	}
+	public void setPay(int pay) {
+		this.pay=pay;
+		System.out.println("月工资:"+pay);
+	}
+	public int getPay() {
+		return pay;
+	}
+	public void setFee(int fee) {
+		this.fee=fee;
+		System.out.println("学期学费:"+fee);
+	}
+	public int getFee() {
+		return fee;
+	}
+	public int getYearpay() {
+		return 12*pay;
+	}
+	public int getYearfee() {
+		return 2*fee;
+	}
+}
+public class Interface1 {
+	public static void main(String args[]) {
+		Graduate graduate=new Graduate();
+		graduate.setName("Zhangsan");
+		graduate.setSex("男");
+		graduate.setAge(22);
+		graduate.setPay(1500);
+		graduate.setFee(8500);
+		if(graduate.getYearpay()-graduate.getYearfee()<2000)
+			System.out.println("研究生"+graduate.getName()+"年收入"+graduate.getYearpay()+"学费"+graduate.getYearfee()+"需要贷款！");
+		else
+			System.out.println("研究生"+graduate.getName()+"年收入"+graduate.getYearpay()+"学费"+graduate.getYearfee()+"无需贷款！");
+	}
+}
